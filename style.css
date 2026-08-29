@@ -103,7 +103,6 @@ section p {
 .videos video {
   width: 640px;       
   height: 360px;      
-  transform: rotate(-90deg); 
   object-fit: cover; 
 }
 
