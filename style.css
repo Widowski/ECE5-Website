@@ -91,19 +91,15 @@ section p {
 }
 
 .videos {
-  width: 360px;      
-  height: 640px;      
   display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;  
-  background: #000;  
+  justify-content: flex-start; 
+  margin-top: 30px;
 }
 
 .videos video {
-  width: 640px;       
-  height: 360px;      
-  object-fit: cover; 
+  max-width: 100%;        
+  height: auto;              
+  border-radius: 10px;        
 }
 
 footer {
