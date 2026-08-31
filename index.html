@@ -93,8 +93,11 @@
             <p>In order for our robot to follow a winding path, it will sometimes be required to correct its course. 
                 The challenge is determining when and by exactly how much the robot should be adjusting. Thankfully, we
                 have a P.I.D control system to automatically make these determinations for us. All we have to do is set
-                the amount the robot should automatically adjust by anytime a change in alignment is needed. First, our photoresistors
-                detect...
+                the amount the robot should automatically adjust by anytime a change in alignment is needed. First, we 
+                calculate the error using our photoresistor data to determined how far from our desired angle our robot
+                is. Once he have this error, we scale it by three main factors to determine our correction. 
+
+                The First factor is <B>P</B>, 
             </p>
                 <iframe width="560" height="315" 
                     src="https://www.youtube.com/embed/4Y7zG48uHRo?si=Za0aiTz0YY4a3OLV" 
