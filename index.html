@@ -700,8 +700,43 @@ void Print() {
                 <p>
                     For loop/drag race nominal speed was set to 190. <br>
                     For frequency sweep, nominal speed was set to 120. We also swapped runMotors() to the following:
-                    <pre><code>function greetMe() {
-                        console.log("Hello, World!");
+                    <pre><code>
+// function to run motors with speed reduction during sharp turns
+void RunMotors() {
+
+  // Base speed from nominal speed + speed potentiometer
+  int baseSpeed = NOMINALSPEED + SpRead;
+
+  // Amount of error from center of the line
+  float absError = abs(error);
+
+  // Slow down when the robot is making a sharp turn
+  // No slowdown for small errors
+  float speedMultiplier;
+
+  if (absError < 0.5) {
+    speedMultiplier = 1.0;
+  }
+  else if (absError < 1.0) {
+    speedMultiplier = 0.9;
+  }
+  else if (absError < 2.0) {
+    speedMultiplier = 0.8;
+  }
+  else {
+    speedMultiplier = 0.7;
+  }
+
+  // Apply the slowdown to the base speed
+  baseSpeed = baseSpeed * speedMultiplier;
+
+  // Add PID correction
+  M1SpeedtoMotor = min(max(baseSpeed + M1P, -255), 255);
+  M2SpeedtoMotor = min(max(baseSpeed + M2P, -255), 255);
+
+  runMotorAtSpeed(LEFT, M2SpeedtoMotor);
+  runMotorAtSpeed(RIGHT, M1SpeedtoMotor);
+}
                     }</code></pre>
 
                 </p>
