@@ -58,8 +58,6 @@
             </div>
           
         </section>
-      
-
 
         <section>
             <h2>Assembly</h2>
@@ -87,31 +85,188 @@
             </div>
         </section>
 
+        <!--All the PID stuff-->
+        
         <section>
             <h2>PID Control</h2>
-
-            <p>In order for our robot to follow a winding path, it will sometimes be required to correct its course. 
-                The challenge is determining when and by exactly how much the robot should be adjusting. Thankfully, we
-                have a P.I.D control system to automatically make these determinations for us. All we have to do is set
-                the amount the robot should automatically adjust by anytime a change in alignment is needed. First, we 
-                calculate the error using our photoresistor data to determined how far from our desired angle our robot
-                is. Once he have this error, we scale it by three main factors to determine our correction. 
-
-                The First factor is <B>P</B>, 
-            </p>
-                <iframe width="560" height="315" 
-                    src="https://www.youtube.com/embed/4Y7zG48uHRo?si=Za0aiTz0YY4a3OLV" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
-            <p>Here explain the exact values we chose for each track</p>
             
-            <div class = "photos">
-                <h1>TBD</h1>
+            ```
+            <p>
+                PID control allows our robot to continuously adjust its direction based on the
+                error measured by the photoresistors. The controller uses three components —
+                P, I, and D — to determine how strongly and how quickly the robot should
+                correct its course.
+            </p>
+            
+            <div class="pid-explanation">
+            
+                <div class="pid-card">
+                    <div class="pid-letter">P</div>
+                    <div>
+                        <h3>Proportional</h3>
+                        <p>Corrects based on the robot's current error.</p>
+                    </div>
+                </div>
+            
+                <div class="pid-card">
+                    <div class="pid-letter">I</div>
+                    <div>
+                        <h3>Integral</h3>
+                        <p>Corrects based on accumulated error over time.</p>
+                    </div>
+                </div>
+            
+                <div class="pid-card">
+                    <div class="pid-letter">D</div>
+                    <div>
+                        <h3>Derivative</h3>
+                        <p>Reduces overshooting by responding to changes in error.</p>
+                    </div>
+                </div>
+            
             </div>
+            
+            
+            <h3 class="subheading">Choosing Our PID Values</h3>
+            
+            <p>
+                We tested different combinations of speed and PID values to find settings
+                that allowed the robot to perform reliably on each track. Because each track
+                presented different challenges, we adjusted the controller rather than using
+                one set of values for every event.
+            </p>
+            
+            
+            <div class="pid-settings">
+            
+                <!-- FREQUENCY SWEEP -->
+            
+                <div class="pid-track">
+                    <h3>Frequency Sweep</h3>
+            
+                    <div class="pid-numbers">
+            
+                        <div>
+                            <span>Speed</span>
+                            <strong>0</strong>
+                        </div>
+            
+                        <div>
+                            <span>P</span>
+                            <strong>31</strong>
+                        </div>
+            
+                        <div>
+                            <span>I</span>
+                            <strong>100</strong>
+                        </div>
+            
+                        <div>
+                            <span>D</span>
+                            <strong>59</strong>
+                        </div>
+            
+                    </div>
+            
+                    <p>
+                        <strong>Why these values?</strong><br>
+                        We used these settings because
+                        ________________________________.
+                    </p>
+                </div>
+            
+            
+                <!-- CIRCLE -->
+            
+                <div class="pid-track">
+                    <h3>Circle</h3>
+            
+                    <div class="pid-numbers">
+            
+                        <div>
+                            <span>Speed</span>
+                            <strong>100</strong>
+                        </div>
+            
+                        <div>
+                            <span>P</span>
+                            <strong>37</strong>
+                        </div>
+            
+                        <div>
+                            <span>I</span>
+                            <strong>33</strong>
+                        </div>
+            
+                        <div>
+                            <span>D</span>
+                            <strong>32</strong>
+                        </div>
+            
+                    </div>
+            
+                    <p>
+                        <strong>Why these values?</strong><br>
+                        We used these settings because
+                        ________________________________.
+                    </p>
+                </div>
+            
+            
+                <!-- DRAG RACE -->
+            
+                <div class="pid-track">
+                    <h3>Drag Race</h3>
+            
+                    <div class="pid-numbers">
+            
+                        <div>
+                            <span>Speed</span>
+                            <strong>100</strong>
+                        </div>
+            
+                        <div>
+                            <span>P</span>
+                            <strong>14</strong>
+                        </div>
+            
+                        <div>
+                            <span>I</span>
+                            <strong>33</strong>
+                        </div>
+            
+                        <div>
+                            <span>D</span>
+                            <strong>32</strong>
+                        </div>
+            
+                    </div>
+            
+                    <p>
+                        <strong>Why these values?</strong><br>
+                        We used these settings because
+                        ________________________________.
+                    </p>
+                </div>
+            
+            </div>
+            
+            
+            <h3 class="subheading">PID Demonstration</h3>
+            
+            <div class="embedded-video">
+                <iframe
+                    src="https://www.youtube.com/embed/4Y7zG48uHRo"
+                    title="PID Control Demonstration"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            ```
+            
         </section>
+
 
         <section>
             <h2>Poster</h2>
