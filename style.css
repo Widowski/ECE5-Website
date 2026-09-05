@@ -210,6 +210,22 @@ border: none;
 border-radius: 10px;
 }
 
+/* Following a Line */
+.videos {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.videos video {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+}
+
 /* ==================== CODE ==================== */
 
 .code-box {
