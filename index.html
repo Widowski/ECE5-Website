@@ -90,11 +90,10 @@
         <section>
             <h2>PID Control</h2>
             
-            ```
             <p>
                 PID control allows our robot to continuously adjust its direction based on the
-                error measured by the photoresistors. The controller uses three components —
-                P, I, and D — to determine how strongly and how quickly the robot should
+                error measured by the photoresistors. The controller uses three components,
+                P, I, and D, to determine how strongly and how quickly the robot should
                 correct its course.
             </p>
             
@@ -125,7 +124,18 @@
                 </div>
             
             </div>
+
+            <h3 class="subheading">PID Video Explanation</h3>
             
+            <div class="embedded-video">
+                <iframe
+                    src="https://www.youtube.com/embed/4Y7zG48uHRo"
+                    title="PID Control Explanation"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
             
             <h3 class="subheading">Choosing Our PID Values</h3>
             
@@ -170,8 +180,10 @@
             
                     <p>
                         <strong>Why these values?</strong><br>
-                        We used these settings because
-                        ________________________________.
+                        We used these settings because we needed to prioritize accuracy over speed. 
+                        To achieve this, we cut speed and P to near zero (since we don't need speed or fast correction).
+                        We lifted I and D to slightly higher but still somewhat low settings so that if there is a sharp turn then the
+                        robot will be able to turn sharper as error accumulates over time but will hopefully not overshoot.
                     </p>
                 </div>
             
@@ -208,7 +220,8 @@
                     <p>
                         <strong>Why these values?</strong><br>
                         We used these settings because
-                        ________________________________.
+                        we need to be decently fast, but since the track is relatively predictable with no sharp turns,
+                        only need very small correction from our P, I and D.
                     </p>
                 </div>
             
@@ -244,26 +257,13 @@
             
                     <p>
                         <strong>Why these values?</strong><br>
-                        We used these settings because
-                        ________________________________.
+                        These settings are almost identical to those we used for loop.
+                        Once again, speed is a priority, and only a small correction is needed.
+                        Since the race track is almost a straight line we can actually set P even lower than for loop.
                     </p>
                 </div>
             
             </div>
-            
-            
-            <h3 class="subheading">PID Demonstration</h3>
-            
-            <div class="embedded-video">
-                <iframe
-                    src="https://www.youtube.com/embed/4Y7zG48uHRo"
-                    title="PID Control Demonstration"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            ```
             
         </section>
 
