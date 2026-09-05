@@ -79,6 +79,90 @@ section p {
     margin-bottom: 0;
 }
 
+.pid-explanation {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+margin-top: 35px;
+}
+
+.pid-card {
+background: white;
+padding: 25px;
+border-radius: 10px;
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+.pid-letter {
+font-size: 42px;
+font-weight: bold;
+min-width: 50px;
+}
+
+.pid-card h3 {
+margin: 0 0 8px;
+font-size: 22px;
+}
+
+.pid-card p {
+margin: 0;
+font-size: 15px;
+line-height: 1.4;
+}
+
+/* ==================== PID SETTINGS ==================== */
+
+.pid-settings {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+margin-top: 30px;
+}
+
+.pid-track {
+background: white;
+padding: 25px;
+border-radius: 10px;
+}
+
+.pid-track h3 {
+margin-top: 0;
+font-size: 24px;
+}
+
+.pid-numbers {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 10px;
+margin: 20px 0;
+}
+
+.pid-numbers div {
+background: #f2f2f2;
+padding: 12px;
+border-radius: 7px;
+text-align: center;
+}
+
+.pid-numbers span {
+display: block;
+color: #666;
+font-size: 13px;
+margin-bottom: 3px;
+}
+
+.pid-numbers strong {
+display: block;
+font-size: 24px;
+}
+
+.pid-track p {
+font-size: 15px;
+line-height: 1.5;
+}
+
 .photos {
     display: flex;
     gap: 20px;
@@ -112,6 +196,7 @@ footer {
     color: #aaa;
 }
 
+/*All just for resizing on mobile not that important*/
 @media (max-width: 700px) {
     header h1 {
         font-size: 50px;
@@ -123,5 +208,14 @@ footer {
 
     .photos img {
         width: 100%;
+    }
+
+    /*PID nonsense for mobile*/
+    .pid-explanation { 
+        grid-template-columns: 1fr; 
+    } 
+    
+    .pid-settings { 
+        grid-template-columns: 1fr; 
     }
 }
